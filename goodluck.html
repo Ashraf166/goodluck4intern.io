@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Good Luck!</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Pacifico">
+    <style>
+        body {
+            font-family: 'Pacifico', cursive;
+            margin: 0;
+            padding: 0;
+            background-color: #E7F6E7; /* Light green */
+            color: #014928; /* Dark green */
+            font-size: 16px;
+            line-height: 1.6;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            padding: 20px;
+            background-color: #FFFFFF; /* White */
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            border-radius: 5px;
+        }
+        h1 {
+            text-align: center;
+            color: #014928; /* Dark green */
+            margin-bottom: 20px;
+            font-family: 'Pacifico', cursive; /* Additional style */
+        }
+        p {
+            font-size: 18px;
+            color: #014928; /* Dark green */
+            text-align: justify;
+            font-family: 'Pacifico', cursive; /* Additional style */
+        }
+        .heart {
+            font-size: 36px;
+            color: #FF9F9D; /* Pink */
+            text-align: center;
+            margin-top: 20px;
+            animation: pulse 1s infinite;
+        }
+        @keyframes pulse {
+            0% { transform: scale(0.9); }
+            50% { transform: scale(1); }
+            100% { transform: scale(0.9); }
+        }
+        .centered-gif {
+            display: block;
+            margin: 0 auto;
+        }
+        footer {
+            text-align: center;
+            font-size: 14px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Good Luck on Your Internship!</h1>
+        <p>Dear Nurrul Atirah,</p>
+        <p>As you embark on this new journey, may you find joy, growth, and fulfillment in every moment. Remember that you are capable, and this is just another step on your path to greatness.</p>
+        <p>Your internship is an opportunity to learn, to grow, and to explore new possibilities. It's a chance to gain valuable experience, to meet new people, and to make a positive impact. Soak in every moment, embrace every challenge, and cherish every success.</p>
+        <p>Wishing you the best of luck and success on your internship. You've got this! And remember, no matter what happens, you're already a winner.</p>
+        <div class="heart">❤️</div>
+        <img src="goodluck.gif" alt="Good Luck GIF" style="width: 50%; margin-top: 20px;" class="centered-gif">
+    </div>
+    <footer>
+        &copy; 2024 All Right Preserved  | Created for Nurrul Atirah
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            setTimeout(function () {
+                document.querySelector('.heart').style.visibility = 'visible';
+            }, 2000); // Show the heart emoji after a 2-second delay
+        });
+    </script>
+</body>
+</html>

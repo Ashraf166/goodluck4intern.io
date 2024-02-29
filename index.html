@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome!</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Pacifico">
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #E7F6E7; /* Light green */
+            color: #014928; /* Dark green */
+            font-size: 16px;
+            line-height: 1.6;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            padding: 20px;
+            background-color: #FFFFFF; /* White */
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            border-radius: 5px;
+        }
+        h1 {
+            text-align: center;
+            color: #014928; /* Dark green */
+            margin-bottom: 20px;
+            font-family: 'Pacifico', cursive; /* Additional style */
+        }
+        form {
+            text-align: center;
+        }
+        input[type="text"] {
+            padding: 10px;
+            width: 300px;
+            border-radius: 5px;
+            border: 1px solid #D1D1D1; /* Light gray */
+            color: #014928; /* Dark green */
+            font-size: 16px;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+        input[type="submit"] {
+            padding: 10px 20px;
+            background-color: #77C18B; /* Light green */
+            color: #FFFFFF; /* White */
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .error-message {
+            color: red;
+        }
+
+        /* Media queries */
+        @media screen and (max-width: 768px) {
+            .container {
+                width: 90%;
+            }
+            input[type="text"] {
+                width: 100%;
+            }
+        }
+
+        /* Animation for swipe-up effect */
+        @keyframes swipeUp {
+            from {
+                transform: translateY(0);
+            }
+            to {
+                transform: translateY(-100%);
+            }
+        }
+        .swipeUp {
+            animation: swipeUp 3s ease-out forwards;
+        }
+
+        footer {
+            position: fixed;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            background-color: #f2f2f2;
+            color: black;
+            text-align: center;
+            font-size: 14px;
+            padding: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome!</h1>
+        <form id="nameForm" action="goodluck.html" method="get" onsubmit="return validateName(event)">
+            <label for="name">Enter your name:</label><br>
+            <input type="text" id="name" name="name" required><br>
+            <input type="submit" value="Proceed" onclick="handleSwipeUp(event)">
+        </form>
+        <p id="errorMessage" class="error-message"></p>
+    </div>
+
+    <footer>
+        &copy; 2024 All Right Preserved  | Created for Nurrul Atirah
+    </footer>
+
+    <script>
+        function validateName(event) {
+            var nameInput = document.getElementById('name').value.trim().toLowerCase();
+            var errorMessage = document.getElementById('errorMessage');
+            
+            if (nameInput !== "nurrul atirah") {
+                errorMessage.innerText = "Incorrect name. Please enter 'Nurrul Atirah'.";
+                return false;
+            } else {
+                errorMessage.innerText = "";
+                return true;
+            }
+        }
+
+        function handleSwipeUp(event) {
+            event.preventDefault(); // Prevent the default form submission
+            var container = document.querySelector('.container');
+            container.classList.add('swipeUp');
+            setTimeout(function() {
+                document.getElementById('nameForm').submit();
+            }, 500); // Change 1000 to the duration of your swipe-up animation
+        }
+    </script>
+</body>
+</html>
